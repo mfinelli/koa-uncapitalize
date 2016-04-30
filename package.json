@@ -1,0 +1,22 @@
+{
+  "name": "koa-uncapitalize",
+  "version": "1.0.0",
+  "description": "Koajs middleware to uncapitalize routes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfinelli/koa-uncapitalize.git"
+  },
+  "keywords": [
+    "koajs"
+  ],
+  "author": "Mario Finelli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mfinelli/koa-uncapitalize/issues"
+  },
+  "homepage": "https://github.com/mfinelli/koa-uncapitalize#readme"
+}
