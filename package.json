@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/mfinelli/koa-uncapitalize/issues"
   },
-  "homepage": "https://github.com/mfinelli/koa-uncapitalize#readme"
+  "homepage": "https://github.com/mfinelli/koa-uncapitalize#readme",
+  "devDependencies": {
+    "expect": "^1.18.0",
+    "koa": "^1.2.0",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
+  }
 }
