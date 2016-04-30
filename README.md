@@ -1,5 +1,7 @@
 # Koa Uncapitalize
 
+[![NPM](https://img.shields.io/npm/v/koa-uncapitalize.svg)](https://www.npmjs.com/package/koa-uncapitalize)
+
 A [koajs](https://github.com/koajs/koa) middleware to uncapitalize routes
 based on a similar module that was created for express:
 [express-uncapitalize](https://github.com/jamiesteven/express-uncapitalize).
