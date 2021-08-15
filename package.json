@@ -4,6 +4,8 @@
   "description": "Koajs middleware to uncapitalize routes.",
   "main": "index.js",
   "scripts": {
+    "lint": "prettier --check **/**{js,json,md}",
+    "fix": "prettier --write **/**{js,json,md}",
     "test": "mocha test"
   },
   "repository": {
@@ -23,6 +25,7 @@
     "expect": "^1.18.0",
     "koa": "^1.2.0",
     "mocha": "^2.4.5",
+    "prettier": "^2.3.2",
     "supertest": "^1.2.0"
   }
 }
