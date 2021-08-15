@@ -1,8 +1,8 @@
-module.exports = function *(next) {
-  if (/[A-Z]/.test(this.request.url)) {
-    this.status = 301;
-    this.redirect(this.url.toLowerCase());
+module.exports = async function (ctx, next) {
+  if (/[A-Z]/.test(ctx.request.url)) {
+    ctx.status = 301;
+    ctx.redirect(ctx.url.toLowerCase());
   } else {
-    yield next;
+    await next();
   }
 };

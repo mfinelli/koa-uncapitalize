@@ -5,7 +5,8 @@ It aims to adhere to [semantic versioning](http://semver.org/).
 
 ## [Unreleased]
 
-* Add: basic tests
+- **BREAKING:** Upgrade to koa v2 middleware signature
+- Add: basic tests
 
 ## [1.0.0] - 2016-04-30
 

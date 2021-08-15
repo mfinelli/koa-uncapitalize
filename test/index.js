@@ -1,29 +1,36 @@
-const koa = require('koa'),
-      expect = require('expect'),
-      uncapitalize = require('../'),
-      app = koa();
+const agent = require("supertest-koa-agent"),
+  expect = require("chai").expect,
+  Koa = require("koa"),
+  uncapitalize = require("../");
 
-app.use(uncapitalize);
-app.use(function *(next) {
-  if (this.path.toLowerCase() != '/test') {
-    return yield next;
-  }
+var app = null;
+var subject = null;
 
-  this.body = "OK";
+beforeEach(() => {
+  app = new Koa();
+
+  app.use(uncapitalize);
+  app.use((ctx, next) => {
+    if (ctx.path.toLowerCase() != "/test") {
+      return next();
+    }
+
+    ctx.response.body = "OK";
+  });
+
+  subject = agent(app);
 });
 
-const request = require('supertest').agent(app.listen());
-
-describe('koa uncapitalize', function() {
-  describe('lowercase routes', function() {
-    it('should not redirect', function(done) {
-      request.get('/test').expect(200, done);
+describe("koa uncapitalize", () => {
+  describe("lowercase routes", () => {
+    it("should not redirect", (done) => {
+      subject.get("/test").expect(200, "OK", done);
     });
   });
 
-  describe('uppercase routes', function() {
-    it('should redirect', function(done) {
-      request.get('/TEST').expect(301, done);
+  describe("uppercase routes", () => {
+    it("should redirect", (done) => {
+      subject.get("/TEST").expect(301, done);
     });
   });
 });
