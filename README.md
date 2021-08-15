@@ -20,14 +20,14 @@ $ npm install --save koa-uncapitalize
 Usage is easy: just require the module and `app.use` it:
 
 ```javascript
-const uncapitalize = require('koa-uncapitalize');
+const uncapitalize = require("koa-uncapitalize");
 app.use(uncapitalize);
 ```
 
 Or all at once:
 
 ```javascript
-app.use(require('koa-uncapitalize'));
+app.use(require("koa-uncapitalize"));
 ```
 
 Now all users accessing uppercase routes will be redirected (301) to the
