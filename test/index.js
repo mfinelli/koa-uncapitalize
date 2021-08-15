@@ -10,12 +10,12 @@ beforeEach(() => {
   app = new Koa();
 
   app.use(uncapitalize);
-  app.use(function* (next) {
-    if (this.path.toLowerCase() != "/test") {
-      return yield next;
+  app.use((ctx, next) => {
+    if (ctx.path.toLowerCase() != "/test") {
+      return next();
     }
 
-    this.body = "OK";
+    ctx.response.body = "OK";
   });
 
   subject = agent(app);
@@ -24,7 +24,7 @@ beforeEach(() => {
 describe("koa uncapitalize", () => {
   describe("lowercase routes", () => {
     it("should not redirect", (done) => {
-      subject.get("/test").expect(200, done);
+      subject.get("/test").expect(200, "OK", done);
     });
   });
 
