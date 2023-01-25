@@ -22,11 +22,11 @@
   },
   "homepage": "https://github.com/mfinelli/koa-uncapitalize#readme",
   "devDependencies": {
-    "chai": "^4.3.4",
-    "koa": "^2.13.1",
+    "chai": "^4.3.7",
+    "koa": "^2.14.1",
     "mocha": "^9.0.3",
-    "prettier": "^2.3.2",
-    "supertest": "^6.1.5",
+    "prettier": "^2.8.3",
+    "supertest": "^6.3.3",
     "supertest-koa-agent": "^0.3.2"
   }
 }
