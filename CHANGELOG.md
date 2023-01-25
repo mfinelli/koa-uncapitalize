@@ -3,6 +3,10 @@
 This file keeps track of noteable changes to the `koa-uncapitalize` project.
 It aims to adhere to [semantic versioning](http://semver.org/).
 
+## unrelease
+
+**BREAKING:** Drop support for node < 14
+
 ## [2.0.3] - 2021-08-15
 
 Fix to cross publish to GitHub packages.
