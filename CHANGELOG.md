@@ -1,11 +1,11 @@
 # Change Log
 
 This file keeps track of noteable changes to the `koa-uncapitalize` project.
-It aims to adhere to [semantic versioning](http://semver.org/).
+It aims to adhere to [semantic versioning](http://semver.org).
 
-## unrelease
+## unreleased
 
-**BREAKING:** Drop support for node < 14
+**BREAKING:** Drop support for node < 18
 
 ## [2.0.3] - 2021-08-15
 
