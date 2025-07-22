@@ -5,7 +5,7 @@ It aims to adhere to [semantic versioning](http://semver.org).
 
 ## unreleased
 
-**BREAKING:** Drop support for node < 18
+**BREAKING:** Drop support for node < 20
 
 ## [2.0.3] - 2021-08-15
 
