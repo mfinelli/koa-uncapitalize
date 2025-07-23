@@ -5,11 +5,11 @@ It aims to adhere to [semantic versioning](http://semver.org).
 
 ## unreleased
 
-**BREAKING:** Drop support for node < 20
-**BREAKING:** Lowercase only the request path using the host as a base and stop
-lowercasing request query strings
-**BREAKING:** Require koa v3. This probably still works with koa v2 but we're
-only testing with v3 going forward
+- **BREAKING:** Drop support for node < 20
+- **BREAKING:** Lowercase only the request path using the host as a base and
+  stop lowercasing request query strings
+- **BREAKING:** Require koa v3. This probably still works with koa v2 but we're
+  only testing with v3 going forward
 
 ## [2.0.3] - 2021-08-15
 
