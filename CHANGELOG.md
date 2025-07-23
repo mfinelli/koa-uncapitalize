@@ -1,11 +1,13 @@
 # Change Log
 
-This file keeps track of noteable changes to the `koa-uncapitalize` project.
+This file keeps track of notable changes to the `koa-uncapitalize` project.
 It aims to adhere to [semantic versioning](http://semver.org).
 
 ## unreleased
 
 **BREAKING:** Drop support for node < 20
+**BREAKING:** Lowercase only the request path using the host as a base and stop
+lowercasing request query strings
 
 ## [2.0.3] - 2021-08-15
 
