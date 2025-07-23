@@ -3,7 +3,7 @@
 This file keeps track of notable changes to the `koa-uncapitalize` project.
 It aims to adhere to [semantic versioning](http://semver.org).
 
-## unreleased
+## [3.0.0] - 2025-07-23
 
 - **BREAKING:** Drop support for node < 20
 - **BREAKING:** Lowercase only the request path using the host as a base and
