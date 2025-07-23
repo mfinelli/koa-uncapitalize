@@ -2,20 +2,23 @@
 name: Publish
 on:
   push:
-    tags:
-      - 'v*'
+    tags: [v*]
 
 jobs:
   main:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4.4.0
+      - uses: actions/setup-node@v4
         with:
+          node-version: lts/*
           registry-url: https://registry.npmjs.org
-      - run: npm install
-      - run: npm publish
+      - run: npm ci
+      - run: npm publish --access=public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -24,11 +27,16 @@ jobs:
   mirror:
     name: Mirror
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4.4.0
+      - uses: actions/setup-node@v4
         with:
+          node-version: lts/*
           registry-url: https://npm.pkg.github.com
+      - run: npm ci
       - run: npm init -y --scope ${{ github.repository_owner }}
       - run: npm publish
         env:
