@@ -13,14 +13,19 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
       - uses: actions/setup-node@v5
         with:
+          cache: pnpm
           node-version: lts/*
           registry-url: https://registry.npmjs.org
-      - run: npm ci
-      - run: npm publish --access=public --provenance
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: "true"
 
   # run the mirror to GH packages in a different job
   # https://github.com/actions/setup-node/issues/234
@@ -32,12 +37,16 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
       - uses: actions/setup-node@v5
         with:
+          cache: pnpm
           node-version: lts/*
           registry-url: https://npm.pkg.github.com
-      - run: npm ci
-      - run: npm init -y --scope ${{ github.repository_owner }}
-      - run: npm publish
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm init -y --scope ${{ github.repository_owner }}
+      - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
