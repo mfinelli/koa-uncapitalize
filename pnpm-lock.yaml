@@ -10,7 +10,7 @@ importers:
     devDependencies:
       chai:
         specifier: ^6.0.1
-        version: 6.0.1
+        version: 6.2.0
       koa:
         specifier: ^3.0.0
         version: 3.0.1
@@ -94,8 +94,8 @@ packages:
     resolution: {integrity: sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==}
     engines: {node: '>=10'}
 
-  chai@6.0.1:
-    resolution: {integrity: sha512-/JOoU2//6p5vCXh00FpNgtlw0LjvhGttaWc+y7wpW9yjBm3ys0dI8tSKZxIOgNruz5J0RleccatSIC3uxEZP0g==}
+  chai@6.2.0:
+    resolution: {integrity: sha512-aUTnJc/JipRzJrNADXVvpVqi6CO0dn3nx4EVPxijri+fj3LUUDyZQOgVeW54Ob3Y1Xh9Iz8f+CgaCl8v0mn9bA==}
     engines: {node: '>=18'}
 
   chalk@4.1.2:
@@ -734,7 +734,7 @@ snapshots:
 
   camelcase@6.2.0: {}
 
-  chai@6.0.1: {}
+  chai@6.2.0: {}
 
   chalk@4.1.2:
     dependencies:
